@@ -72,7 +72,7 @@ class Router
     when 3 then @customers_controller.add
     when 4 then @customers_controller.list
     when 5 then @orders_controller.add
-    when 6 then puts "TODO"
+    when 6 then @orders_controller.list_undelivered_orders
     when 7 then logout!
     when 8 then stop!
     else puts "Try again..."

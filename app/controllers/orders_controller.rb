@@ -39,4 +39,11 @@ class OrdersController
     new_order = Order.new({ meal: meal, customer: customer, employee: rider })
     @order_repository.create(new_order)
   end
+
+  def list_undelivered_orders
+    # get all undelivered orders from the repo
+    undeliverd_orders = @order_repository.undeliverd_orders
+    # display them nicely
+    @orders_view.display(undeliverd_orders)
+  end
 end

@@ -20,6 +20,10 @@ class OrderRepository
     save_csv
   end
 
+  def undeliverd_orders
+    @orders.reject { |order| order.delivered? }
+  end
+
   # Get all the undelivered orders
 
   def load_csv
