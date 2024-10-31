@@ -46,4 +46,11 @@ class OrdersController
     # display them nicely
     @orders_view.display(undeliverd_orders)
   end
+
+  def list_my_orders(employee)
+    # ask the order repository to get all the orders assigned to the employee that is not devlierd
+    my_undelivered_orders = @order_repository.my_undelivered_orders(employee)
+    # display them nicely
+    @orders_view.display(my_undelivered_orders)
+  end
 end

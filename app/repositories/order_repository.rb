@@ -24,6 +24,10 @@ class OrderRepository
     @orders.reject { |order| order.delivered? }
   end
 
+  def my_undelivered_orders(employee)
+    undeliverd_orders.select { |order| order.employee == employee }
+  end
+
   # Get all the undelivered orders
 
   def load_csv
