@@ -32,8 +32,6 @@ Style/SignalException:
   Enabled: false
 Metrics/CyclomaticComplexity:
   Enabled: false
-Style/MethodMissingSuper:
-  Enabled: false
 Style/MissingRespondToMissing:
   Enabled: false
 Security/Open:
