@@ -20,12 +20,12 @@ class OrderRepository
     save_csv
   end
 
-  def undeliverd_orders
+  def undelivered_orders
     @orders.reject { |order| order.delivered? }
   end
 
   def my_undelivered_orders(employee)
-    undeliverd_orders.select { |order| order.employee == employee }
+    undelivered_orders.select { |order| order.employee == employee }
   end
 
   def mark_as_delivered(order)
