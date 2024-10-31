@@ -53,4 +53,16 @@ class OrdersController
     # display them nicely
     @orders_view.display(my_undelivered_orders)
   end
+
+  def mark_as_delivered(employee)
+    # display the undelivered orders that belongs to the employee
+    my_undelivered_orders = @order_repository.my_undelivered_orders(employee)
+    @orders_view.display(my_undelivered_orders)
+
+    # ask the user for index
+    order_index = @orders_view.ask_for_index
+    order_to_mark_as_delivered = my_undelivered_orders[order_index]
+    # mark the order as delivered (repository's job)
+    @order_repository.mark_as_delivered(order_to_mark_as_delivered)
+  end
 end

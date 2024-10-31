@@ -87,7 +87,7 @@ class Router
     when 2 then @meals_controller.list
     when 3 then @customers_controller.add
     when 4 then @customers_controller.list
-    when 5 then puts "TODO"
+    when 5 then @orders_controller.mark_as_delivered(@current_user)
     when 6 then @orders_controller.list_my_orders(@current_user)
     when 7 then logout!
     when 8 then stop!

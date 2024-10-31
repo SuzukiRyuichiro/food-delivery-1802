@@ -28,6 +28,13 @@ class OrderRepository
     undeliverd_orders.select { |order| order.employee == employee }
   end
 
+  def mark_as_delivered(order)
+    # make delivered attribute to true
+    order.deliver!
+    # save that into CSV
+    save_csv
+  end
+
   # Get all the undelivered orders
 
   def load_csv
